@@ -8,6 +8,27 @@ This is the code for preprocesing the facial emotion data set, which originally 
 - **load_data.py**: contain simple code to load the dataset for further use.
 - **instruction.ipynb**: instructive code utilizing wonderful reporting features of notebook to give you a more detailed of how I have done it.
 
+## DATA SET
+The data set contains of total 7 kinds of facial expression, with corresponding number of samples:
+
+
+| Emotion     |  Number of Samples | Deleted Black/White image |
+| ----------- |:------------------:|:-------------------------:|
+| Angry|4953|4945|
+| Disgust|547|547|
+| Fear|5121|5121|
+| Happy|8989|8988|
+| Sad|6077|6076|
+| Surprise|4022|4001|
+| Neutral|6198|6197|
+
+![Angry](img/Angry.png)
+![Disgust](img/Disgust.png)
+![Fear](img/Fear.png)
+![Happy]](img/Happy.png)
+![Sad](img/Sad.png)
+![Surprise](img/Surprise.png)
+
 ## A BRIEF SKETCH OF PREPROCESSING SCHEME
 You can find a more detailed report in **instruction.ipynb**. Here, I would give merely the core idea:
 - In order to create balance in each class/label, my solution is setting the number of taken images equal to the class has smallest number of sample, or second smallest (which is synonym to get rid of **Disgust** class from the final dataset).
@@ -16,7 +37,7 @@ You can find a more detailed report in **instruction.ipynb**. Here, I would give
 - The final dataset would be saved and loaded as a dictionary with keys as follows: train_dataset, train_labels,test_dataset, test_labels.
 
 ## HOW TO RUN
-- Downloads all files in this repository.
+- Downloads all files in this repository. Extract the zip files.
 - Choose generating small or big data set by modifying value of **IS_INCLUDED_DISGUST** in **preprocess_data.py**, then simply run it.
 - For how to load the dataset, check **load_data.py**.
 
