@@ -76,7 +76,7 @@ def plot_images(plotted_images, caption):
             subfig.set_title(caption[index])
             subfig.set_yticklabels([]), subfig.set_xticklabels([])
         plt.show()
-
+    
 def load_emotion (folder):
     image_files = os.listdir(folder)
     numb_image_files = len(image_files)
@@ -102,7 +102,7 @@ def make_pickle (label_names):
     for label in label_names:
         dataset = load_emotion(label)
         emotion_name = label_to_emotion[int(label)]
-        #plot_images(dataset[:25], emotion_name); 
+        plot_images(dataset[:25], emotion_name); 
         pickle_name = label + '.pickle'
         with open (pickle_name, 'wb') as f:
             pickle_files.append(pickle_name)
@@ -128,6 +128,9 @@ def divide_dataset(pickle_files, train_size, test_size):
     end_size_per_class = train_size_per_class + test_size_per_class
 
     for label, pickle_file in enumerate(pickle_files):
+        if (IS_INCLUDED_DISGUST == False):
+            if (label == emotion_to_label['Disgust']):
+                continue
         with open (pickle_file, 'rb') as f:
             emotion_set = pickle.load(f)
             # Shuffle all the faces having same emotion
@@ -153,7 +156,6 @@ if (IS_INCLUDED_DISGUST == True):
     TOTAL_SIZE = SIZE_BALANCE_SMALL * NUMB_EMOTIONS
 else:
     NUMB_EMOTIONS = 6
-    del pickle_files[emotion_to_label['Disgust']]
     TOTAL_SIZE = SIZE_BALANCE_BIG * NUMB_EMOTIONS
 train_size = int(TOTAL_SIZE * TRAIN_PERCENTAGE)
 test_size = int(TOTAL_SIZE * TEST_PERCENTAGE)
