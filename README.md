@@ -25,7 +25,7 @@ The data set contains of total 7 kinds of facial expression, with corresponding 
 ![Angry](img/Angry.png)
 ![Disgust](img/Disgust.png)
 ![Fear](img/Fear.png)
-![Happy]](img/Happy.png)
+![Happy](img/Happy.png)
 ![Sad](img/Sad.png)
 ![Surprise](img/Surprise.png)
 
