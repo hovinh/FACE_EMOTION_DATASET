@@ -14,7 +14,8 @@ from skimage.util.montage import montage2d # plot image in batch
 from skimage.color import rgb2gray
 
 PIXEL_VALUE_RANGE = 255.
-IS_INCLUDED_DISGUST = True
+IS_INCLUDED_DISGUST = False
+NUMB_EMOTIONS = 7
 
 emotions = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 label_to_emotion = {i : emotions[i] for i in range(NUMB_EMOTIONS)}
@@ -60,4 +61,4 @@ def plot_images(plotted_images, caption):
             subfig.set_yticklabels([]), subfig.set_xticklabels([])
         plt.show()
 
-plot_images(train_dataset[:100], [label_to_emotion[i] for i in train_labels[:100]])
+plot_images(train_dataset[210:230], [label_to_emotion[i] for i in train_labels[210:230]])
