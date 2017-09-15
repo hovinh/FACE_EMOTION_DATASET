@@ -42,7 +42,7 @@ You can find a more detailed report in **instruction.ipynb**. Here, I would give
 - For how to load the dataset, check **load_data.py**.
 
 ## ACKNOWLEDGEMENT
-Thank you Kuba for converting the dataset from .csv format into images, which saved me an amount of time.
-
+- Thank you Kuba for converting the dataset from .csv format into images, which saved me an amount of time.
+- My code is adapted from [Goodle Udacity Deep Learning course](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/udacity/1_notmnist.ipynb)
 ## CONTACT
 Any problem arisen, please feel free to contact me( hovinh39@gmail.com ).
